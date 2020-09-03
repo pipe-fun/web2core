@@ -3,7 +3,7 @@ use serde::{Serialize, Deserialize};
 #[derive(Serialize, Deserialize, Debug)]
 pub enum Operation {
     Execute(ExecuteInfo),
-    Reload,
+    Reload(String),
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -13,7 +13,7 @@ pub struct ExecuteInfo {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-pub enum ExecuteResult {
+pub enum OpResult {
     Ok,
     DeviceOffline,
     CoreOffline,
